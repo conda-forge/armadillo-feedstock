@@ -18,7 +18,7 @@ source:
         - CMakeLists.patch
 
 build:
-  number: 0
+  number: 200
   skip: True  # [win]
   features:
     - blas_{{ variant }}
@@ -56,3 +56,4 @@ about:
 extra:
     recipe-maintainers:
       - grlee77
+      - dirmeier
