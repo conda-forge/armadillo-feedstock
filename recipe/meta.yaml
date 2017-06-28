@@ -1,4 +1,4 @@
-{% set version = "7.950.0" %}
+{% set version = "7.950.1" %}
 {% set variant = "openblas" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 source:
     fn: armadillo-{{ version }}.tar.xz
     url: http://sourceforge.net/projects/arma/files/armadillo-{{ version }}.tar.xz
-    sha256: da89281959d48c60ce546dd370ef712ec1e24714e1e9afadad17dd2fbbc5876e
+    sha256: a32da32a0ea420b8397a53e4b40ed279c1a5fc791dd492a2ced81ffb14ad0d1b
     patches:
         # have to add additional ${PREFIX}/lib etc... to tests/Makefile
         - make_tests.patch  # [linux]
