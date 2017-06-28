@@ -1,16 +1,26 @@
---- CMakeLists.txt	2016-06-16 18:16:30.000000000 +0200
-+++ CMakeLists_new.txt	2017-06-11 13:33:26.000000000 +0200
-@@ -148,9 +148,23 @@
+--- CMakeLists.txt	2016-06-16 18:16:31.000000000 +0200
++++ CMakeLists_new.txt	2017-06-28 19:30:47.000000000 +0200
+@@ -142,15 +142,30 @@
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake_aux/Modules/")
+ 
+ if(APPLE)
+-  
++
+   set(ARMA_OS macos)
+-  
++
    set(ARMA_USE_LAPACK true)
    set(ARMA_USE_BLAS   true)
-   
+-  
 -  set(ARMA_LIBS ${ARMA_LIBS} "-framework Accelerate")  # or "-framework accelerate" ?
 -  message(STATUS "MacOS X detected. Added '-framework Accelerate' to compiler flags")
 -  
++
++  include(ARMA_FindLAPACK)
 +  include(ARMA_FindOpenBLAS)
 +
-+  if(OpenBLAS_FOUND)      
-+    set(ARMA_LIBS ${ARMA_LIBS} ${OpenBLAS_LIBRARIES})    
++  if(OpenBLAS_FOUND)
++    set(ARMA_LIBS ${ARMA_LIBS} ${OpenBLAS_LIBRARIES})
 +    set(ARMA_LIBS ${ARMA_LIBS} ${LAPACK_LIBRARIES})
 +    message(STATUS "")
 +    message(STATUS "*** If the OpenBLAS library is installed in")
@@ -18,8 +28,8 @@
 +    message(STATUS "*** make sure the run-time linker can find it.")
 +    message(STATUS "*** On Linux systems this can be done by editing /etc/ld.so.conf")
 +    message(STATUS "*** or modifying the LD_LIBRARY_PATH environment variable.")
-+    message(STATUS "")      
-+  else()        
++    message(STATUS "")
++  else()
 +    set(ARMA_LIBS ${ARMA_LIBS} "-framework Accelerate")  # or "-framework accelerate" ?
 +    message(STATUS "MacOS X detected. Added '-framework Accelerate' to compiler flags")
 +  endif()
