@@ -14,7 +14,8 @@ if [[ `uname` == 'Darwin' ]]; then
 else
 
     cmake .. \
-        -DCMAKE_INSTALL_PREFIX="${PREFIX}"
+        -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+        -DCMAKE_INSTALL_LIBDIR="lib"
     #    -DDETECT_HDF5="true"
 fi
 
