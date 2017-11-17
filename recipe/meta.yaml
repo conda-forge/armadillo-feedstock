@@ -19,7 +19,7 @@ source:
 
 build:
   number: 201
-  skip: True  # [win]
+  skip: true  # [win]
   features:
     - blas_{{ variant }}
 
