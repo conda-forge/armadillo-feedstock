@@ -18,8 +18,8 @@ source:
         - CMakeLists.patch
 
 build:
-  number: 200
-  skip: True  # [win]
+  number: 201
+  skip: true  # [win]
   features:
     - blas_{{ variant }}
 
@@ -29,13 +29,13 @@ requirements:
     # optional items below here
     - pkg-config
     - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
+    - openblas 0.2.20|0.2.20.*
     - arpack
     - superlu 5*
     # - hdf5 1.8.17|1.8.17.*
   run:
     - blas 1.1 {{ variant }}
-    - openblas 0.2.19|0.2.19.*
+    - openblas 0.2.20|0.2.20.*
     - arpack
     - superlu 5*
     # - hdf5 1.8.17|1.8.17.*
