@@ -14,14 +14,16 @@ Summary: Armadillo C++ linear algebra library
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/armadillo-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/armadillo-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/armadillo-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/armadillo-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/armadillo-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/armadillo-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/armadillo-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/armadillo-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/armadillo-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/armadillo-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/armadillo/badges/version.svg)](https://anaconda.org/conda-forge/armadillo)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/armadillo/badges/downloads.svg)](https://anaconda.org/conda-forge/armadillo)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-armadillo-green.svg)](https://anaconda.org/conda-forge/armadillo) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/armadillo.svg)](https://anaconda.org/conda-forge/armadillo) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/armadillo.svg)](https://anaconda.org/conda-forge/armadillo) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/armadillo.svg)](https://anaconda.org/conda-forge/armadillo) |
 
 Installing armadillo
 ====================
@@ -66,6 +68,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========

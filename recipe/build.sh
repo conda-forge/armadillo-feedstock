@@ -9,14 +9,12 @@ if [[ `uname` == 'Darwin' ]]; then
         -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
         -DCMAKE_MACOSX_RPATH="ON" \
         -DCMAKE_INSTALL_RPATH="${PREFIX}/lib"
-    #    -DDETECT_HDF5="true"
 
 else
 
     cmake .. \
         -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
         -DCMAKE_INSTALL_LIBDIR="lib"
-    #    -DDETECT_HDF5="true"
 fi
 
 make
