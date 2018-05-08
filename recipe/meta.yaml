@@ -15,7 +15,7 @@ source:
         - make_tests_osx.patch  # [osx]
         # modify CMakeLists to use OpenBLAS rather than Accelrate on OS X
         # and to use OpenBLAS as the LAPACK library on linux
-        - CMakeLists.patch
+        - CMakeLists.patch  # [unix]
 
 build:
   number: 202
@@ -26,31 +26,28 @@ build:
 requirements:
   build:
     - cmake
-    - m2w64-toolchain  # [win]
+    - toolchain
     # optional items below here
-    - pkg-config  # [not win]
     - blas 1.1 {{ variant }}
     - openblas 0.2.20|0.2.20.*
-    - arpack  # [not win]
-    - superlu 5.2  # [not win]
+    - pkg-config  # [unix]
+    - arpack  # [unix]
+    - superlu 5.2  # [unix]
+    - m2w64-make  # [win]
   run:
-    - m2w64-toolchain  # [win]
     - blas 1.1 {{ variant }}
     - openblas 0.2.20|0.2.20.*
-    - arpack  # [not win]
-    - superlu 5.2  # [not win]
+    - arpack  # [unix]
+    - superlu 5.2  # [unix]
 
 test:
   commands:
-    - test -f "${PREFIX}/include/armadillo"  # [not win]
-    - test -d "${PREFIX}/include/armadillo_bits"  # [not win]
-    - test -f "${PREFIX}/lib/libarmadillo${SHLIB_EXT}"  # [not win]
-    - dir %LIBRARY_INC%  # [win]
-    - dir %LIBRARY_LIB%  # [win]
-    - dir %LIBRARY_INC%\armadillo  # [win]
+    - test -f "${PREFIX}/include/armadillo"  # [unix]
+    - test -d "${PREFIX}/include/armadillo_bits"  # [unix]
+    - test -f "${PREFIX}/lib/libarmadillo${SHLIB_EXT}"  # [unix]
     - if not exist %LIBRARY_INC%\armadillo_bits exit 1  # [win]
     - if not exist %LIBRARY_INC%\armadillo exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\armadillo\libarmadillo.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\armadillo.lib exit 1  # [win]
 
 about:
     home: http://arma.sourceforge.net
