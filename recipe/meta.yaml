@@ -27,10 +27,11 @@ requirements:
   build:
     - cmake
     - {{ compiler('c') }}
+    - pkg-config  # [unix]
+  host:
     # optional items below here
     - blas 1.1 {{ variant }}
     - openblas
-    - pkg-config  # [unix]
     - arpack  # [unix]
     - superlu 5.2  # [unix]
   run:
