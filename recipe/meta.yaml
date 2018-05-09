@@ -19,7 +19,7 @@ source:
 
 build:
   number: 202
-  skip: true  # [win32]
+  skip: true  # [win and vc<14]
   features:
     - blas_{{ variant }}
 
