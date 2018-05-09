@@ -1,9 +1,12 @@
 mkdir build
 cd build
 
-REM Trick to avoid CMake/sh.exe error
-ren "C:\Program Files\Git\usr\bin\sh.exe" _sh.exe
-
-cmake -DCMAKE_INSTALL_PREFIX="%PREFIX%" -DCMAKE_INSTALL_LIBDIR="%LIBRARY_LIB%" -DCMAKE_INSTALL_INCLUDEDIR="%LIBRARY_INC%" -DCMAKE_INSTALL_BINDIR="%LIBRARY_BIN%" -DCMAKE_INSTALL_DATADIR="%LIBRARY_PREFIX%" ..
+cmake   -G "%CMAKE_GENERATOR%" ^
+        -DCMAKE_INSTALL_PREFIX="%PREFIX%" ^
+        -DCMAKE_INSTALL_LIBDIR="%LIBRARY_LIB%" ^
+        -DCMAKE_INSTALL_INCLUDEDIR="%LIBRARY_INC%" ^
+        -DCMAKE_INSTALL_BINDIR="%LIBRARY_BIN%" ^
+        -DCMAKE_INSTALL_DATADIR="%LIBRARY_PREFIX%" ^
+        ..
 
 cmake --build . --target INSTALL --config Release

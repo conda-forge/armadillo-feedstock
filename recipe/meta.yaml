@@ -26,17 +26,16 @@ build:
 requirements:
   build:
     - cmake
-    - toolchain
+    - {{ compiler('c') }}
     # optional items below here
     - blas 1.1 {{ variant }}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
     - pkg-config  # [unix]
     - arpack  # [unix]
     - superlu 5.2  # [unix]
-    - m2w64-make  # [win]
   run:
     - blas 1.1 {{ variant }}
-    - openblas 0.2.20|0.2.20.*
+    - openblas
     - arpack  # [unix]
     - superlu 5.2  # [unix]
 
