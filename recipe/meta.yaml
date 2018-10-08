@@ -18,7 +18,7 @@ source:
         - CMakeLists.patch  # [unix]
 
 build:
-  number: 202
+  number: 1202
   skip: true  # [win and vc<14]
   features:
     - blas_{{ variant }}
