@@ -32,12 +32,13 @@ requirements:
     # optional items below here
     - blas 1.1 {{ variant }}
     - openblas
-    - arpack  # [unix]
+    # override default arpack pin: only 3.6 was compiled with the new compilers
+    - arpack 3.6 # [unix]
     - superlu  # [unix]
   run:
     - blas 1.1 {{ variant }}
     - openblas
-    - arpack  # [unix]
+    - arpack 3.6 # [unix]
     - superlu  # [unix]
 
 test:
