@@ -33,12 +33,12 @@ requirements:
     - blas 1.1 {{ variant }}
     - openblas
     - arpack  # [unix]
-    - superlu 5.2  # [unix]
+    - superlu  # [unix]
   run:
     - blas 1.1 {{ variant }}
     - openblas
     - arpack  # [unix]
-    - superlu 5.2  # [unix]
+    - superlu  # [unix]
 
 test:
   commands:
