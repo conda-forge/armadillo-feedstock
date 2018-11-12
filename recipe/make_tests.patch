@@ -5,7 +5,7 @@
 -LIB_FLAGS = -larmadillo
 -#LIB_FLAGS = -lblas -llapack 
 -#LIB_FLAGS = -lopenblas -llapack 
-+LIB_FLAGS = -larmadillo -L${PREFIX}/lib
++LIB_FLAGS = -larmadillo -lblas -larpack -L${PREFIX}/lib
 +#LIB_FLAGS = -lblas -llapack
 +#LIB_FLAGS = -lopenblas -llapack
  
