@@ -19,4 +19,8 @@ fi
 
 make
 make install
+if [[ `uname` != 'Darwin' ]]; then
+    # need to update LD_LIBRARY_PATH for libarmadillo.so to be found by main
+    export LD_LIBRARY_PATH="${PREFIX}/lib:${LD_LIBRARY_PATH}"
+fi
 cd ${SRC_DIR}/tests && make && ./main

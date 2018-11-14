@@ -18,7 +18,7 @@ source:
         - CMakeLists.patch  # [unix]
 
 build:
-  number: 202
+  number: 1202
   skip: true  # [win and vc<14]
   features:
     - blas_{{ variant }}
@@ -26,19 +26,19 @@ build:
 requirements:
   build:
     - cmake
-    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - pkg-config  # [unix]
   host:
     # optional items below here
     - blas 1.1 {{ variant }}
     - openblas
     - arpack  # [unix]
-    - superlu 5.2  # [unix]
+    - superlu 5.2.*  # [unix]
   run:
     - blas 1.1 {{ variant }}
     - openblas
     - arpack  # [unix]
-    - superlu 5.2  # [unix]
+    - superlu 5.2.*  # [unix]
 
 test:
   commands:
