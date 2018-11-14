@@ -3,14 +3,6 @@
 mkdir -p build
 cd build
 
-# remove --as-needed (copied from conda-forge/suitesparse-feedstock#41)
-# conda compilers strip links that aren't used by default,
-# even if explicitly given.
-# This may result in undefined symbols
-# when libraries are intended to bundle others they may
-# not use themselves (e.g. umfpack bundling cholmod)
-export LDFLAGS=${LDFLAGS/-Wl,--as-needed/}
-
 if [[ `uname` == 'Darwin' ]]; then
 
     cmake .. \
@@ -27,4 +19,8 @@ fi
 
 make
 make install
+if [[ `uname` != 'Darwin' ]]; then
+    # need to update LD_LIBRARY_PATH for libarmadillo.so to be found by main
+    export LD_LIBRARY_PATH="${PREFIX}/lib:${LD_LIBRARY_PATH}"
+fi
 cd ${SRC_DIR}/tests && make && ./main
