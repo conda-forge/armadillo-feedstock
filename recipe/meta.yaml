@@ -18,10 +18,12 @@ source:
         - CMakeLists.patch  # [unix]
 
 build:
-  number: 1202
+  number: 1203
   skip: true  # [win and vc<14]
   features:
     - blas_{{ variant }}
+  run_exports:
+    - {{ pin_subpackage('armadillo', min_pin='x.x', max_pin='x') }}
 
 requirements:
   build:
