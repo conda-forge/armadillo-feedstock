@@ -1,5 +1,4 @@
 {% set version = "9.200.4" %}
-{% set variant = "openblas" %}
 
 package:
     name: armadillo
@@ -18,10 +17,9 @@ source:
         - CMakeLists.patch  # [unix]
 
 build:
-  number: 1203
+  number: 1204
   skip: true  # [win and vc<14]
   features:
-    - blas_{{ variant }}
   run_exports:
     - {{ pin_subpackage('armadillo', min_pin='x.x', max_pin='x') }}
 
@@ -31,14 +29,12 @@ requirements:
     - {{ compiler('cxx') }}
     - pkg-config  # [unix]
   host:
+    - libblas
+    - libcblas
     # optional items below here
-    - blas 1.1 {{ variant }}
-    - openblas
     - arpack  # [unix]
     - superlu 5.2.*  # [unix]
   run:
-    - blas 1.1 {{ variant }}
-    - openblas
     - arpack  # [unix]
     - superlu 5.2.*  # [unix]
 
