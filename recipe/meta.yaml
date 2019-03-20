@@ -19,7 +19,6 @@ source:
 build:
   number: 1204
   skip: true  # [win and vc<14]
-  features:
   run_exports:
     - {{ pin_subpackage('armadillo', min_pin='x.x', max_pin='x') }}
 
@@ -29,9 +28,9 @@ requirements:
     - {{ compiler('cxx') }}
     - pkg-config  # [unix]
   host:
-    - libblas
-    - libcblas
     # optional items below here
+    - libblas
+    - liblapack
     - arpack  # [unix]
     - superlu 5.2.*  # [unix]
   run:
