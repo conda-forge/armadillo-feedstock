@@ -11,4 +11,4 @@ cd build
 
 make -j${CPU_COUNT}
 make install
-cd ${SRC_DIR}/tests && make && ./main
+cd ${SRC_DIR}/tests && make LIB_FLAGS="-larmadillo $LDFLAGS" && ./main
