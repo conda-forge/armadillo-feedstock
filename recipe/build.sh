@@ -3,24 +3,12 @@
 mkdir -p build
 cd build
 
-if [[ `uname` == 'Darwin' ]]; then
-
-    cmake .. \
+ cmake .. \
         -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-        -DCMAKE_MACOSX_RPATH="ON" \
-        -DCMAKE_INSTALL_RPATH="${PREFIX}/lib"
+        -DCMAKE_PREFIX_PATH="${PREFIX}" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_LIBDIR="lib" \
 
-else
-
-    cmake .. \
-        -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-        -DCMAKE_INSTALL_LIBDIR="lib"
-fi
-
-make
+make -j${CPU_COUNT}
 make install
-if [[ `uname` != 'Darwin' ]]; then
-    # need to update LD_LIBRARY_PATH for libarmadillo.so to be found by main
-    export LD_LIBRARY_PATH="${PREFIX}/lib:${LD_LIBRARY_PATH}"
-fi
 cd ${SRC_DIR}/tests && make && ./main
