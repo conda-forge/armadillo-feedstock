@@ -17,13 +17,13 @@
 -  
 +
 +  include(ARMA_FindLAPACK)
-+  include(ARMA_FindOpenBLAS)
++  include(ARMA_FindBLAS)
 +
-+  if(OpenBLAS_FOUND)
-+    set(ARMA_LIBS ${ARMA_LIBS} ${OpenBLAS_LIBRARIES})
++  if(BLAS_FOUND)
++    set(ARMA_LIBS ${ARMA_LIBS} ${BLAS_LIBRARIES})
 +    set(ARMA_LIBS ${ARMA_LIBS} ${LAPACK_LIBRARIES})
 +    message(STATUS "")
-+    message(STATUS "*** If the OpenBLAS library is installed in")
++    message(STATUS "*** If the BLAS library is installed in")
 +    message(STATUS "*** /usr/local/lib or /usr/local/lib64")
 +    message(STATUS "*** make sure the run-time linker can find it.")
 +    message(STATUS "*** On Linux systems this can be done by editing /etc/ld.so.conf")
