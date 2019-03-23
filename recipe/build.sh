@@ -3,7 +3,11 @@
 mkdir -p build
 cd build
 
- cmake .. \
+if [[ $(uname) == "Linux" ]]; then
+  export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
+fi
+
+cmake .. \
         -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
         -DCMAKE_PREFIX_PATH="${PREFIX}" \
         -DCMAKE_BUILD_TYPE=Release \
