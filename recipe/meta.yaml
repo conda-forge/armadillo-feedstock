@@ -1,4 +1,4 @@
-{% set version = "9.200.4" %}
+{% set version = "9.700.2" %}
 
 package:
     name: armadillo
@@ -7,7 +7,7 @@ package:
 source:
     fn: armadillo-{{ version }}.tar.xz
     url: http://sourceforge.net/projects/arma/files/armadillo-{{ version }}.tar.xz
-    sha256: 10d1cc38503624bf1ad8c55c0d53b4feb80f04fcb3f5c3e6a69ba95d00f17966
+    sha256: 923f2b48974f707c9da3176aab8d370e8003de23277c17ca0e49fdf97fac08bd
     patches:
         # have to add additional ${PREFIX}/lib etc... to tests/Makefile
         - make_tests.patch  # [linux]
