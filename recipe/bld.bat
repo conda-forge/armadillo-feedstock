@@ -1,7 +1,7 @@
 mkdir build
 cd build
 
-cmake   -G "%CMAKE_GENERATOR%" ^
+cmake   -GNinja ^
         -DCMAKE_INSTALL_PREFIX="%PREFIX%" ^
         -DCMAKE_INSTALL_LIBDIR="%LIBRARY_LIB%" ^
         -DCMAKE_INSTALL_INCLUDEDIR="%LIBRARY_INC%" ^
