@@ -27,6 +27,7 @@ requirements:
     - cmake
     - {{ compiler('cxx') }}
     - pkg-config  # [unix]
+    - ninja  # [win]
   host:
     # optional items below here
     - libblas
