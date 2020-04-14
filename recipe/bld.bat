@@ -9,4 +9,4 @@ cmake   -GNinja ^
         -DCMAKE_INSTALL_DATADIR="%LIBRARY_PREFIX%" ^
         ..
 
-cmake --build . --target INSTALL --config Release
+cmake --build . --target install --config Release
