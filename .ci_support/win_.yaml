@@ -3,16 +3,10 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2015
+- vs2017
 libblas:
 - 3.8 *netlib
-libcblas:
-- 3.8 *netlib
-pin_run_as_build:
-  vc:
-    max_pin: x
+liblapack:
+- 3.8.0 *netlib
 vc:
 - '14'
-zip_keys:
-- - vc
-  - cxx_compiler

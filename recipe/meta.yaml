@@ -17,7 +17,7 @@ source:
         - CMakeLists.patch  # [unix]
 
 build:
-  number: 1204
+  number: 1205
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('armadillo', min_pin='x.x', max_pin='x') }}
@@ -27,6 +27,7 @@ requirements:
     - cmake
     - {{ compiler('cxx') }}
     - pkg-config  # [unix]
+    - ninja  # [win]
   host:
     # optional items below here
     - libblas
@@ -48,7 +49,7 @@ test:
 
 about:
     home: http://arma.sourceforge.net
-    license: Apache 2.0
+    license: Apache-2.0
     license_file: LICENSE.txt
     summary: Armadillo C++ linear algebra library
 
