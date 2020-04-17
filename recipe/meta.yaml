@@ -17,7 +17,7 @@ source:
         - CMakeLists.patch  # [unix]
 
 build:
-  number: 1205
+  number: 1206
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('armadillo', min_pin='x.x', max_pin='x') }}
