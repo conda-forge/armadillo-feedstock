@@ -8,5 +8,7 @@ libblas:
 - 3.8 *netlib
 liblapack:
 - 3.8.0 *netlib
+target_platform:
+- win-64
 vc:
 - '14'
