@@ -151,5 +151,6 @@ Feedstock Maintainers
 
 * [@dirmeier](https://github.com/dirmeier/)
 * [@grlee77](https://github.com/grlee77/)
+* [@henryiii](https://github.com/henryiii/)
 * [@marcelotrevisani](https://github.com/marcelotrevisani/)
 
