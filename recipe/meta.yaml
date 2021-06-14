@@ -21,7 +21,7 @@ build:
 
 requirements:
   build:
-    - cmake
+    - cmake >=3.1
     - make  # [unix]
     - {{ compiler('cxx') }}
     - pkg-config  # [unix]
@@ -31,10 +31,10 @@ requirements:
     - libblas
     - liblapack
     - arpack  # [unix]
-    - superlu 5.2.*  # [unix]
+    - superlu >=5.2.0,<6  # [unix]
   run:
     - arpack  # [unix]
-    - superlu 5.2.*  # [unix]
+    - superlu >=5.2.0,<6  # [unix]
 
 test:
   commands:
