@@ -8,10 +8,6 @@ source:
   fn: armadillo-{{ version }}.tar.xz
   url: http://sourceforge.net/projects/arma/files/armadillo-{{ version }}.tar.xz
   sha256: c961c6b13c72bb047d80fdfbbfadb2d910f73767c9c1070221eb16168aa48a2d
-  patches:
-    # have to add additional ${PREFIX}/lib etc... to tests/Makefile
-    - make_tests.patch  # [linux]
-    - make_tests_osx.patch  # [osx]
 
 build:
   number: 0
