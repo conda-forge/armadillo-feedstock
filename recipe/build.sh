@@ -15,5 +15,5 @@ cmake -S . -B build \
 
 cmake --build build -j${CPU_COUNT}
 cmake --install build
-cmake --build build --target tests
+cmake --build build --target test
 
