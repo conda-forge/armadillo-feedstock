@@ -10,9 +10,10 @@ cmake -S . -B build \
         -DCMAKE_BUILD_TYPE=Release \
         -DALLOW_OPENBLAS_MACOS=ON \
         -DALLOW_BLAS_LAPACK_MACOS=ON \
-        -DCMAKE_INSTALL_LIBDIR="lib"
+        -DCMAKE_INSTALL_LIBDIR="lib" \
+        -DBUILD_SMOKE_TEST=ON
 
 cmake --build build -j${CPU_COUNT}
 cmake --install build
+CTEST_OUTPUT_ON_FAILURE=1 cmake --build build --target test
 
-cd tests && make LIB_FLAGS="$LDFLAGS -larmadillo" && ./main
