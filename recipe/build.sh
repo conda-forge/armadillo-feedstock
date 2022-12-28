@@ -4,7 +4,7 @@ if [[ $(uname) == "Linux" ]]; then
   export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
 fi
 
-cmake -S . -B build \
+cmake ${CMAKE_ARGS} -S . -B build \
         -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
         -DCMAKE_PREFIX_PATH="${PREFIX}" \
         -DCMAKE_BUILD_TYPE=Release \
