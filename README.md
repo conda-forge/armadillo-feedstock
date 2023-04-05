@@ -1,11 +1,11 @@
-About armadillo
-===============
+About armadillo-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/armadillo-feedstock/blob/main/LICENSE.txt)
 
 Home: http://arma.sourceforge.net
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/armadillo-feedstock/blob/main/LICENSE.txt)
 
 Summary: Armadillo C++ linear algebra library
 
