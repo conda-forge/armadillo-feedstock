@@ -15,5 +15,7 @@ cmake ${CMAKE_ARGS} -S . -B build \
 
 cmake --build build -j${CPU_COUNT}
 cmake --install build
-CTEST_OUTPUT_ON_FAILURE=1 cmake --build build --target test
+if [[ "${cross_target_platform}" == "${build_platform}" || "${CMAKE_CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
+    CTEST_OUTPUT_ON_FAILURE=1 cmake --build build --target test
+fi
 
