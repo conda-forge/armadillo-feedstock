@@ -10,7 +10,7 @@ source:
   sha256: eb7f243ffc32f18324bc7fa978d0358637e7357ca7836bec55b4eb56e9749380
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('armadillo', min_pin='x.x', max_pin='x') }}
