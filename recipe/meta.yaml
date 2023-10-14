@@ -1,4 +1,4 @@
-{% set version = "12.6.4" %}
+{% set version = "12.6.5" %}
 
 package:
   name: armadillo
@@ -7,10 +7,10 @@ package:
 source:
   fn: armadillo-{{ version }}.tar.xz
   url: http://sourceforge.net/projects/arma/files/armadillo-{{ version }}.tar.xz
-  sha256: eb7f243ffc32f18324bc7fa978d0358637e7357ca7836bec55b4eb56e9749380
+  sha256: f6f1c987f9bc2b52e9718835cc416a525cf58a6d575a851d219c0c6ab5b8c563
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('armadillo', min_pin='x.x', max_pin='x') }}
