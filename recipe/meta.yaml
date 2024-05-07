@@ -1,4 +1,4 @@
-{% set version = "12.8.2" %}
+{% set version = "12.8.3" %}
 
 package:
   name: armadillo
@@ -7,7 +7,7 @@ package:
 source:
   fn: armadillo-{{ version }}.tar.xz
   url: http://sourceforge.net/projects/arma/files/armadillo-{{ version }}.tar.xz
-  sha256: 03b62f8c09e4f5d74643b478520741b8e27b55e7e4525978fcae2f5d791ac3bf
+  sha256: 2922589f6387796504b340da6bb954bef3d87574c298515893289edd2d890151
 
 build:
   number: 0
@@ -20,6 +20,7 @@ requirements:
     - cmake >=3.1
     - make  # [unix]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - pkg-config  # [unix]
     - ninja  # [win]
   host:
