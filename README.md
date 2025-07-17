@@ -3,7 +3,7 @@ About armadillo-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/armadillo-feedstock/blob/main/LICENSE.txt)
 
-Home: http://arma.sourceforge.net
+Home: http://arma.sourceforge.net/
 
 Package license: Apache-2.0
 
