@@ -1,0 +1,72 @@
+schema_version: 1
+
+context:
+  version: 14.6.0
+
+package:
+  name: armadillo
+  version: ${{ version }}
+
+source:
+  url: http://sourceforge.net/projects/arma/files/armadillo-${{ version }}.tar.xz
+  sha256: d18ccdb78a5da88f18fc529d8a8d40fad455842be6b01c59796f47a6f5bc7fe5
+  file_name: armadillo-${{ version }}.tar.xz
+
+build:
+  number: 1
+  skip: win and vc<14
+
+requirements:
+  build:
+    - cmake >=3.1
+    - if: unix
+      then: make
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - if: unix
+      then: pkg-config
+    - if: win
+      then: ninja
+  host:
+    # optional items below here
+    - libblas
+    - liblapack
+    - if: unix
+      then: arpack
+    - if: unix
+      then: superlu >=5.2.0,<6
+  run:
+    - if: unix
+      then: arpack
+    - if: unix
+      then: superlu >=5.2.0,<6
+  run_exports:
+    - ${{ pin_subpackage('armadillo', lower_bound='x.x', upper_bound='x') }}
+
+tests:
+  - script:
+      - if: unix
+        then: test -f "${PREFIX}/include/armadillo"
+      - if: unix
+        then: test -d "${PREFIX}/include/armadillo_bits"
+      - if: unix
+        then: test -f "${PREFIX}/lib/libarmadillo${SHLIB_EXT}"
+      - if: win
+        then: if not exist %LIBRARY_INC%\armadillo_bits exit 1
+      - if: win
+        then: if not exist %LIBRARY_INC%\armadillo exit 1
+      - if: win
+        then: if not exist %LIBRARY_LIB%\armadillo.lib exit 1
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE.txt
+  summary: Armadillo C++ linear algebra library
+  homepage: http://arma.sourceforge.net
+
+extra:
+  recipe-maintainers:
+    - grlee77
+    - dirmeier
+    - marcelotrevisani
+    - henryiii
