@@ -28,10 +28,10 @@ requirements:
     - libblas
     - liblapack
     - arpack  # [unix]
-    - superlu >=5.2.0,<6  # [unix]
+    - superlu <7.1  # [unix]
   run:
     - arpack  # [unix]
-    - superlu >=5.2.0,<6  # [unix]
+    - superlu <7.1  # [unix]
 
 test:
   commands:
