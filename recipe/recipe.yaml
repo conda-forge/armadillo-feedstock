@@ -19,12 +19,12 @@ build:
 requirements:
   build:
     - cmake >=3.1
-    - if: unix
-      then: make
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
     - if: unix
-      then: pkg-config
+      then:
+        - make
+        - pkg-config
     - if: win
       then: ninja
   host:
@@ -32,31 +32,29 @@ requirements:
     - libblas
     - liblapack
     - if: unix
-      then: arpack
-    - if: unix
-      then: superlu >=5.2.0,<6
+      then:
+       - arpack
+       - superlu <7.1
   run:
     - if: unix
-      then: arpack
-    - if: unix
-      then: superlu >=5.2.0,<6
+      then:
+        - arpack
+        - superlu <7.1
   run_exports:
     - ${{ pin_subpackage('armadillo', lower_bound='x.x', upper_bound='x') }}
 
 tests:
   - script:
       - if: unix
-        then: test -f "${PREFIX}/include/armadillo"
-      - if: unix
-        then: test -d "${PREFIX}/include/armadillo_bits"
-      - if: unix
-        then: test -f "${PREFIX}/lib/libarmadillo${SHLIB_EXT}"
+        then:
+          - test -f "${PREFIX}/include/armadillo"
+          - test -d "${PREFIX}/include/armadillo_bits"
+          - test -f "${PREFIX}/lib/libarmadillo${SHLIB_EXT}"
       - if: win
-        then: if not exist %LIBRARY_INC%\armadillo_bits exit 1
-      - if: win
-        then: if not exist %LIBRARY_INC%\armadillo exit 1
-      - if: win
-        then: if not exist %LIBRARY_LIB%\armadillo.lib exit 1
+        then:
+          - if not exist %LIBRARY_INC%\armadillo_bits exit 1
+          - if not exist %LIBRARY_INC%\armadillo exit 1
+          - if not exist %LIBRARY_LIB%\armadillo.lib exit 1
 
 about:
   license: Apache-2.0
