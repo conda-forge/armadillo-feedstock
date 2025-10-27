@@ -9,7 +9,7 @@ package:
 
 source:
   url: http://sourceforge.net/projects/arma/files/armadillo-${{ version }}.tar.xz
-  sha256: 2f71c0661fc4a46e2dd56b7651cf3bb5928b499a4b10df31efc1a4241edf0043
+  sha256: fc5c2237c73e24411ff30e9c90aef8f756c462320c736c3862aa66b1a56ee9ce
   file_name: armadillo-${{ version }}.tar.xz
 
 build:
