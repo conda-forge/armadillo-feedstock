@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 14.6.0
+  version: 15.2.0
 
 package:
   name: armadillo
@@ -9,7 +9,7 @@ package:
 
 source:
   url: http://sourceforge.net/projects/arma/files/armadillo-${{ version }}.tar.xz
-  sha256: d18ccdb78a5da88f18fc529d8a8d40fad455842be6b01c59796f47a6f5bc7fe5
+  sha256: 2f71c0661fc4a46e2dd56b7651cf3bb5928b499a4b10df31efc1a4241edf0043
   file_name: armadillo-${{ version }}.tar.xz
 
 build:
