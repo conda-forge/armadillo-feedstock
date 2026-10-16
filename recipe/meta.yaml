@@ -1,4 +1,4 @@
-{% set version = "15.6.0" %}
+{% set version = "15.6.2" %}
 
 package:
   name: armadillo
@@ -7,7 +7,7 @@ package:
 source:
   fn: armadillo-{{ version }}.tar.xz
   url: http://sourceforge.net/projects/arma/files/armadillo-{{ version }}.tar.xz
-  sha256: e00a11b15ce4f3a75c634bfa58411ce1acb4317705b418a72348e81dc8f56464
+  sha256: 63ee9351b54994dff7b4e2094a86ace48cfb41354cb65893a9dab7c8a16382c4
 
 build:
   number: 0
